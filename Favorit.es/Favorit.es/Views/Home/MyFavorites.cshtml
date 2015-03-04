@@ -1,0 +1,21 @@
+﻿@model  List<Favorit.es.Models.AddFavoriteViewModel>
+@{
+    ViewBag.Title = "My Favorites";
+}
+
+<div class="jumbotron">
+    <h1>My Favorit.es</h1>
+    <p class="lead">Click to unfavorite something</p>
+    <p><a href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg">Back to Favorit.es</a></p>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <a href="@Url.Action("unfavorite", "home", new { id = item.id})">
+                <img src="@item.url" />
+            </a>
+        </div>
+    }
+</div>
