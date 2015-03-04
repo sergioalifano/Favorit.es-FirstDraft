@@ -81,9 +81,9 @@ namespace Favorit.es.Controllers
         /// <summary>
         /// The user clicked a photo to save as a favorite
         /// </summary>
-        /// <param name="af">an object representing the photo id, url, and title the user wants to save</param>
+        /// <param name="addFavorite">an object representing the photo id, url, and title the user wants to save</param>
         /// <returns></returns>
-        public ActionResult Favorite(AddFavoriteViewModel af)
+        public ActionResult Favorite(AddFavoriteViewModel addFavorite)
         {
             //add the AddFavoriteViewModel to our user favorites
             //save the UserFavorites
