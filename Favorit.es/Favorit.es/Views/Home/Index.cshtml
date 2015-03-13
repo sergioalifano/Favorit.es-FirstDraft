@@ -11,7 +11,10 @@
     
     <form class="form-inline" method="post" action="@Url.Action("Index", "Home")">
         <div    >
+            @*When clicking on the label Show me it will focut the text*@
             <label for="searchText">Show me:</label>
+
+            @*searchText must match inside Home/Index function--->public ActionResult Index(string searchText)*@
             <input type="text" class="form-control" id="searchText" name="searchText" placeholder="Kittens">
             <button type="submit" class="btn btn-default">Go</button>
         </div>
@@ -24,8 +27,10 @@
 
 <div class="row">
     @foreach (var item in Model)
+        
     {
         <div class="col-xs-6 col-md-4">
+            
             <a href="@Url.Action("favorite", "home", new { id = item.PhotoId, title = item.Title, url = item.Small320Url })">
                 <img class="img-thumbnail" src="@item.Small320Url" />
             </a>
